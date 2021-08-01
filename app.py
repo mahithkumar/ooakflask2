@@ -218,14 +218,7 @@ while(1):
 	  return render_template('demofile2.txt')
  @web_site.route('/user/', defaults={'username': None})
  @web_site.route('/user/<username>')
- def generate_user(username):
-	 if not username:
-		 username = request.args.get('username')
 
-	 if not username:
-		 return 'Sorry error something, malformed request.'
-
-	 return render_template('personal_user.html',   user=username)
 
 
  web_site.run(host='0.0.0.0', port=8080) 
